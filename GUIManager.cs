@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
-/* Requires UnityEngine
+/* 
+ * Requires UnityEngine
+ * Requires UnityEngine.CoreModule
  * Requires UnityEngine.TextRenderingModule
  */
 namespace KSPTools

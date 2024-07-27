@@ -2,6 +2,7 @@
 using UnityEngine;
 /*
  * Requires UnityEngine
+ * Requires UnityEngine.CoreModule
  */
 namespace KSPTools
 {
@@ -19,32 +20,7 @@ namespace KSPTools
             OrbitSnapshot snapshot = new OrbitSnapshot(node);
             return snapshot.Load();
         }
-        public static void SaveToFile(string path, ConfigNode node)
-        {
-            Debug.Log("Saving to: " + path);
-            if (Directory.Exists(path))
-            {
-                node.Save(path);
-            }
-            else
-            {
-                Debug.Log("Save directory: " + path + " \ndoes not exist: \nTry creating it before saving");
-            }
-        }
-        public static ConfigNode LoadFromFile(string path)
-        {
-            ConfigNode node = new ConfigNode();
-            if (File.Exists(path))
-            {
-                node = ConfigNode.Load(path);
-            }
-            else
-            {
-                Debug.Log("Save directory: " + path + " \ndoes not exist: \nTry creating it before loading");
-            }
-
-            return node;
-        }
+        
         public static void SetConfigValue(ConfigNode node, string ValueName, string Value)
         {
             if (node.HasValue(ValueName))

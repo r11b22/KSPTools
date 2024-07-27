@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 /*
  * Requires UnityEngine
+ * Requires UnityEngine.CoreModule
  */
 namespace KSPTools
 {
