@@ -1,0 +1,6 @@
+D:\Kerbal Revival Dev\Kerbal-Revival\Projects\KSPTools\bin\Debug\KSPTools.dll
+D:\Kerbal Revival Dev\Kerbal-Revival\Projects\KSPTools\bin\Debug\KSPTools.pdb
+D:\Kerbal Revival Dev\Kerbal-Revival\Projects\KSPTools\obj\Debug\KSPToolsTest.csproj.AssemblyReference.cache
+D:\Kerbal Revival Dev\Kerbal-Revival\Projects\KSPTools\obj\Debug\KSPToolsTest.csproj.CoreCompileInputs.cache
+D:\Kerbal Revival Dev\Kerbal-Revival\Projects\KSPTools\obj\Debug\KSPTools.dll
+D:\Kerbal Revival Dev\Kerbal-Revival\Projects\KSPTools\obj\Debug\KSPTools.pdb
