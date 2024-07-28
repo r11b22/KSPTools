@@ -21,15 +21,15 @@ namespace KSPTools
             return snapshot.Load();
         }
         
-        public static void SetConfigValue(ConfigNode node, string ValueName, string Value)
+        public static void SetConfigValue(ConfigNode node, string valueName, string value)
         {
-            if (node.HasValue(ValueName))
+            if (node.HasValue(valueName))
             {
-                node.SetValue(ValueName, Value);
+                node.SetValue(valueName, value);
             }
             else
             {
-                node.AddValue(ValueName, Value);
+                node.AddValue(valueName, value);
             }
         }
     }

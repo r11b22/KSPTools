@@ -17,7 +17,7 @@ namespace KSPToolsTest
 
                 GUIManager manager = new GUIManager("TestWindow", "TestWindow");
 
-                GUIElement button = new Button("TestButton", printTest);
+                GUIElement button = new Button("TestButton", PrintTest);
                 GUIElement label = new Label("TestLabel");
 
                 manager.AddElement(button);
@@ -35,7 +35,7 @@ namespace KSPToolsTest
             }
             
         }
-        public void printTest()
+        public void PrintTest()
         {
             Debug.Log("Test");
         }

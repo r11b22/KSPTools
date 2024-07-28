@@ -5,25 +5,25 @@ using UnityEngine;
  * Requires UnityEngine.CoreModule
  * Requires UnityEngine.TextRenderingModule
  */
-namespace KSPTools
+namespace KSPTools.GUI
 {
     public class GUIManager
     {
         private string windowIdentifier;
-        private string WindowTitle;
+        private string windowTitle;
         private const string CONTROLLOCKNAME = "UILock";
         DialogGUIBase dialogGUI;
-        private const ControlTypes ControlLock = ControlTypes.ALL_SHIP_CONTROLS;
+        private const ControlTypes CONTROLLOCK = ControlTypes.ALL_SHIP_CONTROLS;
 
         public GUIManager(string windowIdentifier, string windowTitle)
         {
             this.windowIdentifier = windowIdentifier;
-            WindowTitle = windowTitle;
+            this.windowTitle = windowTitle;
             dialogGUI = new DialogGUIVerticalLayout();
         }
         public void LockControls()
         {
-            InputLockManager.SetControlLock(ControlLock, CONTROLLOCKNAME);
+            InputLockManager.SetControlLock(CONTROLLOCK, CONTROLLOCKNAME);
             Debug.Log("Controls disabled");
         }
         public void UnlockControls()
@@ -31,13 +31,13 @@ namespace KSPTools
             InputLockManager.RemoveControlLock(CONTROLLOCKNAME);
             Debug.Log("Controls enabled");
         }
-        public void OpenWindow(bool ControlsLocked = true)
+        public void OpenWindow(bool controlsLocked = true)
         {
-            DialogGUIButton CloseButton = new DialogGUIButton("Close", CloseWindow, false);
-            AddRawElement(CloseButton);
-            MultiOptionDialog dialog = new MultiOptionDialog(windowIdentifier, "", WindowTitle, HighLogic.UISkin, dialogGUI);
+            DialogGUIButton closeButton = new DialogGUIButton("Close", CloseWindow, false);
+            AddRawElement(closeButton);
+            MultiOptionDialog dialog = new MultiOptionDialog(windowIdentifier, "", windowTitle, HighLogic.UISkin, dialogGUI);
             PopupDialog.SpawnPopupDialog(dialog, false, HighLogic.UISkin);
-            if (ControlsLocked)
+            if (controlsLocked)
             {
                 LockControls();
             }
