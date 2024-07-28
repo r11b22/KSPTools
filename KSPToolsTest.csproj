@@ -7,8 +7,8 @@
     <ProjectGuid>{948C0761-D6DA-45DC-B4E0-9CADBF2F53DB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KSPTools</RootNamespace>
-    <AssemblyName>KSPTools</AssemblyName>
+    <RootNamespace>KSPToolsTest</RootNamespace>
+    <AssemblyName>KSPToolsTest</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -53,6 +53,7 @@
     </Reference>
     <Reference Include="UnityEngine.ImageConversionModule">
       <HintPath>..\..\..\..\Kerbal Revival Test\KSP_x64_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
       <HintPath>..\..\..\..\Kerbal Revival Test\KSP_x64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>

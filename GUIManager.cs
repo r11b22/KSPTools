@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 /* 
  * Requires UnityEngine
  * Requires UnityEngine.CoreModule
@@ -8,18 +9,17 @@ namespace KSPTools
 {
     public class GUIManager
     {
-        private string WindowName;
+        private string windowIdentifier;
         private string WindowTitle;
         private const string CONTROLLOCKNAME = "UILock";
         DialogGUIBase dialogGUI;
         private const ControlTypes ControlLock = ControlTypes.ALL_SHIP_CONTROLS;
 
-        public GUIManager(string windowName, string windowTitle)
+        public GUIManager(string windowIdentifier, string windowTitle)
         {
-            WindowName = windowName;
+            this.windowIdentifier = windowIdentifier;
             WindowTitle = windowTitle;
             dialogGUI = new DialogGUIVerticalLayout();
-
         }
         public void LockControls()
         {
@@ -31,11 +31,11 @@ namespace KSPTools
             InputLockManager.RemoveControlLock(CONTROLLOCKNAME);
             Debug.Log("Controls enabled");
         }
-        public void CreateWindow(bool ControlsLocked = true)
+        public void OpenWindow(bool ControlsLocked = true)
         {
             DialogGUIButton CloseButton = new DialogGUIButton("Close", CloseWindow, false);
-            AddElement(CloseButton);
-            MultiOptionDialog dialog = new MultiOptionDialog(WindowName, "", WindowTitle, HighLogic.UISkin, dialogGUI);
+            AddRawElement(CloseButton);
+            MultiOptionDialog dialog = new MultiOptionDialog(windowIdentifier, "", WindowTitle, HighLogic.UISkin, dialogGUI);
             PopupDialog.SpawnPopupDialog(dialog, false, HighLogic.UISkin);
             if (ControlsLocked)
             {
@@ -44,13 +44,41 @@ namespace KSPTools
         }
         public void CloseWindow()
         {
-            PopupDialog.DismissPopup(WindowName);
+            PopupDialog.DismissPopup(windowIdentifier);
             UnlockControls();
         }
-        public void AddElement(DialogGUIBase element)
+        public void AddElement(GUIElement element)
+        {
+            dialogGUI.AddChild(element.GetDialogGUIBase());
+        }
+        public void AddRawElement(DialogGUIBase element)
         {
             dialogGUI.AddChild(element);
         }
 
     }
+    public class GUIElement
+    { 
+        public DialogGUIBase dialogGUI;
+        public GUIElement(DialogGUIBase GUIBase)
+        {
+            dialogGUI = GUIBase;
+        }
+        public DialogGUIBase GetDialogGUIBase()
+        {
+            return dialogGUI;
+        }
+    }
+    public class Button : GUIElement
+    {
+        public Button(string name, Callback callback) : base(new DialogGUIButton(name, callback, false)) { }
+
+    }
+    public class Label : GUIElement
+    { 
+        public Label (string text) : base(new DialogGUILabel(text)) { }
+    }
+
+
+
 }

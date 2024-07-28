@@ -1,4 +1,0 @@
-D:\Kerbal Revival Dev\Kerbal-Revival\Projects\Output\Plugins\KSPTools.dll
-D:\Kerbal Revival Dev\Kerbal-Revival\Projects\KSPTools\obj\Release\KSPToolsTest.csproj.AssemblyReference.cache
-D:\Kerbal Revival Dev\Kerbal-Revival\Projects\KSPTools\obj\Release\KSPToolsTest.csproj.CoreCompileInputs.cache
-D:\Kerbal Revival Dev\Kerbal-Revival\Projects\KSPTools\obj\Release\KSPTools.dll
