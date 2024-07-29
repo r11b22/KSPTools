@@ -7,6 +7,9 @@ using UnityEngine;
  */
 namespace KSPTools.GUI
 {
+    /// <summary>
+    /// A helper class for creating Popupdialog GUI
+    /// </summary>
     public class GUIManager
     {
         private string windowIdentifier;
@@ -21,16 +24,26 @@ namespace KSPTools.GUI
             this.windowTitle = windowTitle;
             dialogGUI = new DialogGUIVerticalLayout();
         }
+        /// <summary>
+        /// Disable the controls of the player.
+        /// </summary>
         public void LockControls()
         {
             InputLockManager.SetControlLock(CONTROLLOCK, CONTROLLOCKNAME);
             Debug.Log("Controls disabled");
         }
+        /// <summary>
+        /// Enable the controls of the player
+        /// </summary>
         public void UnlockControls()
         {
             InputLockManager.RemoveControlLock(CONTROLLOCKNAME);
             Debug.Log("Controls enabled");
         }
+        /// <summary>
+        /// Create and open the window that is stored in the GUIManager object
+        /// </summary>
+        /// <param name="controlsLocked"></param>
         public void OpenWindow(bool controlsLocked = true)
         {
             DialogGUIButton closeButton = new DialogGUIButton("Close", CloseWindow, false);
@@ -42,15 +55,26 @@ namespace KSPTools.GUI
                 LockControls();
             }
         }
+        /// <summary>
+        /// Close and cleanup the window. This does not clean up the GUIManager object the window can be reopend any time.
+        /// </summary>
         public void CloseWindow()
         {
             PopupDialog.DismissPopup(windowIdentifier);
             UnlockControls();
         }
+        /// <summary>
+        /// Add a GUIElement to the window
+        /// </summary>
+        /// <param name="element"></param>
         public void AddElement(GUIElement element)
         {
             dialogGUI.AddChild(element.GetDialogGUIBase());
         }
+        /// <summary>
+        /// Add any DialogGUIBase element to the window directly
+        /// </summary>
+        /// <param name="element"></param>
         public void AddRawElement(DialogGUIBase element)
         {
             dialogGUI.AddChild(element);

@@ -61,11 +61,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Examples\GUIExample.cs" />
+    <Compile Include="Examples\SavingOrbitsExample.cs" />
+    <Compile Include="Examples\SetOrbitExample.cs" />
     <Compile Include="FileManager.cs" />
     <Compile Include="GUIManager.cs" />
     <Compile Include="OrbitSetter.cs" />
     <Compile Include="Serialiser.cs" />
-    <Compile Include="Test.cs" />
+    <Compile Include="Examples\Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

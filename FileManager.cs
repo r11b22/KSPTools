@@ -9,6 +9,11 @@ namespace KSPTools
 {
     public static class FileManager
     {
+        /// <summary>
+        /// Saves a ConfigNode to a file.
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="node"></param>
         public static void SaveToFile(string path, ConfigNode node)
         {
             Debug.Log("Saving to: " + path);
@@ -21,6 +26,11 @@ namespace KSPTools
                 Debug.Log("Save directory: " + path + " \ndoes not exist: \nTry creating it before saving");
             }
         }
+        /// <summary>
+        /// Load a file into a ConfigNode object from path.
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         public static ConfigNode LoadFromFile(string path)
         {
             ConfigNode node = new ConfigNode();
@@ -35,6 +45,11 @@ namespace KSPTools
 
             return node;
         }
+        /// <summary>
+        /// Convert a PNG image into a unity Texture object2D.
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         public static Texture2D PNGToTexture(string path)
         {
            

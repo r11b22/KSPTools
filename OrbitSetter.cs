@@ -10,6 +10,11 @@ namespace KSPTools
 {
     public static class OrbitSetter
     {
+        /// <summary>
+        /// Set the given vessel to the given orbit
+        /// </summary>
+        /// <param name="vessel"></param>
+        /// <param name="orbit"></param>
         public static void SetVesselOrbit(Vessel vessel, Orbit orbit)
         {
             try
