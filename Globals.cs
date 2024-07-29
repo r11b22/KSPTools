@@ -3,7 +3,7 @@
  * Requires UnityEngine
  * Requires UnityEngine.CoreModule
  */
-namespace KSPToolsTest
+namespace KSPTools
 {
     public static class Globals
     {

@@ -3,7 +3,7 @@ using UnityEngine;
 /*
  * this example creates a window with a button and a label on flight start
  */
-namespace KSPToolsTest.Examples
+namespace KSPToolsExamples
 {
     [KSPAddon(KSPAddon.Startup.Flight, false)]
     public class GUIExample

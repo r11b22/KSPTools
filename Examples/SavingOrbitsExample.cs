@@ -3,7 +3,7 @@ using UnityEngine;
 /*
  * This example saves the orbit of the active vessel to a file inside the ksp directory
  */
-namespace KSPToolsTest.Examples
+namespace KSPToolsExamples
 {
     public class SavingOrbitsExample
     {

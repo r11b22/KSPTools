@@ -50,7 +50,7 @@ namespace KSPTools
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
-        public static Texture2D PNGToTexture(string path)
+        public static Texture2D LoadPNG(string path)
         {
            
             if (File.Exists(path))

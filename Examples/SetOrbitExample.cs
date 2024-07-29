@@ -3,7 +3,7 @@ using UnityEngine;
 /*
 * This example sets the orbit of the active vessel after 5 seconds in flight
 */
-namespace KSPToolsTest.Examples
+namespace KSPToolsExamples
 {
     [KSPAddon(KSPAddon.Startup.Flight, false)]
     public class SetOrbitExample : MonoBehaviour

@@ -47,6 +47,10 @@
       <HintPath>..\..\..\..\Kerbal Revival Test\KSP_x64_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\..\..\..\Kerbal Revival Test\KSP_x64_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\..\..\..\Kerbal Revival Test\KSP_x64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
@@ -61,10 +65,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppIconManager.cs" />
     <Compile Include="Examples\GUIExample.cs" />
     <Compile Include="Examples\SavingOrbitsExample.cs" />
     <Compile Include="Examples\SetOrbitExample.cs" />
     <Compile Include="FileManager.cs" />
+    <Compile Include="Globals.cs" />
     <Compile Include="GUIManager.cs" />
     <Compile Include="OrbitSetter.cs" />
     <Compile Include="Serialiser.cs" />
