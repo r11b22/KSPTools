@@ -66,13 +66,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppIconManager.cs" />
-    <Compile Include="Examples\GUIExample.cs" />
-    <Compile Include="Examples\SavingOrbitsExample.cs" />
-    <Compile Include="Examples\SetOrbitExample.cs" />
+    <None Include="Examples\AppIconExample.cs" />
+    <None Include="Examples\GUIExample.cs" />
+    <None Include="Examples\SavingOrbitsExample.cs" />
+    <None Include="Examples\SetOrbitExample.cs" />
     <Compile Include="FileManager.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="GUIManager.cs" />
     <Compile Include="OrbitSetter.cs" />
+    <Compile Include="ResourceManager.cs" />
     <Compile Include="Serialiser.cs" />
     <Compile Include="Examples\Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

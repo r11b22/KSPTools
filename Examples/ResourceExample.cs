@@ -1,16 +1,15 @@
 ﻿using KSPTools;
 using UnityEngine;
 
-
-namespace KSPToolsTest
+namespace KSPToolsExamples
 {
     [KSPAddon(KSPAddon.Startup.Flight, false)]
-    public class Test : MonoBehaviour
+    public class ResourceExample : MonoBehaviour
     {
         public void Start()
         {
             Vessel vessel = Globals.GetActiveVessel();
-            foreach(Part part in vessel.parts)
+            foreach (Part part in vessel.parts)
             {
                 foreach (PartResource resource in part.Resources)
                 {
@@ -18,10 +17,6 @@ namespace KSPToolsTest
                     ResourceManager.AddResource(resource, 10);
                 }
             }
-            
         }
-        
-        
     }
-
 }
