@@ -70,6 +70,8 @@
     <None Include="Examples\GUIExample.cs" />
     <None Include="Examples\SavingOrbitsExample.cs" />
     <None Include="Examples\SetOrbitExample.cs" />
+    <None Include="Examples\ResourceExample.cs" />
+    <Compile Include="EventManager.cs" />
     <Compile Include="FileManager.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="GUIManager.cs" />

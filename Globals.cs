@@ -31,6 +31,10 @@ namespace KSPTools
         {
             return KSPUtil.ApplicationRootPath + "/saves/" + HighLogic.SaveFolder;
         }
+        public static double GetGameTime()
+        {
+            return Planetarium.GetUniversalTime();
+        }
         /// <summary>
         /// returns the active vessel
         /// </summary>

@@ -1,14 +1,91 @@
 ﻿using UnityEngine;
 using System.IO;
+using Smooth.Algebraics;
+using System.Collections.Generic;
 /*
- * Requires UnityEngine
- * Requires UnityEngine.CoreModule
- * Requires UnityEngien.ImageConversionModule(For PNGToTexture)
- */
+* Requires UnityEngine
+* Requires UnityEngine.CoreModule
+* Requires UnityEngien.ImageConversionModule(For PNGToTexture)
+*/
 namespace KSPTools
 {
-    public static class FileManager
-    {
+    [KSPAddon(KSPAddon.Startup.EveryScene, false)]
+    public class FileManager : MonoBehaviour
+    {  
+        private ConfigNode save;
+        private const string ROOTNAME = "CustomSave";
+
+        public void Awake()
+        {
+            Debug.Log("OnAwake");
+            GameEvents.onGameStateSave.Add(OnSave);
+            GameEvents.onGameStateLoad.Add(OnLoad);
+        }
+        
+
+        private void OnLoad(ConfigNode data)
+        {
+            Debug.Log(data);
+            if (data.HasNode(ROOTNAME))
+            {
+                Debug.Log("HasNode");
+                save = data.GetNode(ROOTNAME);
+            }else
+            {
+                Debug.Log("Creating new node");
+                save = new ConfigNode(ROOTNAME);
+                data.AddNode(save);
+            }
+            
+        }
+        private void OnSave(ConfigNode data)
+        {
+            
+            if (save != null)
+            {
+                data.RemoveNode(ROOTNAME);
+                data.AddNode(save);
+            }  
+        }
+
+        public void OnDestroy()
+        {
+            Debug.Log("OnDestroy");
+            GameEvents.onGameStateSave.Remove(OnSave);
+            GameEvents.onGameStateLoad.Remove(OnLoad);
+        }
+        /// <summary>
+        /// This function sets up a node in the save file. If it already exists it uses the version in the file
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public ConfigNode SetupSaveNode(string name)
+        {
+            if (save.HasNode(name))
+            {
+                Debug.Log(save.GetNode(name));
+                Debug.Log(save);
+                return save.GetNode(name);
+            }
+            else
+            {
+                ConfigNode node = new ConfigNode(name);
+                save.AddNode(node);
+                Debug.Log(save.GetNode(name));
+                Debug.Log(save);
+                return node;
+            }
+            
+            
+        }
+
+        public void AddSaveNode(ConfigNode node)
+        {
+            Debug.Log("A config node was set up for saving");
+            save.AddNode(node);
+            
+        }
+
         /// <summary>
         /// Saves a ConfigNode to a file.
         /// </summary>
@@ -17,11 +94,11 @@ namespace KSPTools
         public static void SaveToFile(string path, ConfigNode node)
         {
             Debug.Log("Saving to: " + path);
-            if (Directory.Exists(path))
+            try
             {
                 node.Save(path);
             }
-            else
+            catch
             {
                 Debug.Log("Save directory: " + path + " \ndoes not exist: \nTry creating it before saving");
             }

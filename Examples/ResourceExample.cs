@@ -1,6 +1,8 @@
 ﻿using KSPTools;
 using UnityEngine;
-
+/*
+ * Sets all resources on a vessel to zero and then adds 10.
+ */
 namespace KSPToolsExamples
 {
     [KSPAddon(KSPAddon.Startup.Flight, false)]

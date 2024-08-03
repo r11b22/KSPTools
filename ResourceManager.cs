@@ -1,6 +1,9 @@
 ﻿using System;
 using UnityEngine;
-
+/*
+ * Requires UnityEngine
+ * Requires UnityEngine.CoreModule
+ */
 namespace KSPTools
 {
     public static class ResourceManager
